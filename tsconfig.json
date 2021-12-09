@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": false,
+    "target": "es2015",
+    "module": "esnext",
+    "declaration": true,
+    "esModuleInterop": true,
+    "strict": false,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "lib": [
+      "es5",
+      "es2015",
+      "dom",
+      "dom.iterable"
+    ]
+  },
+  "include" : [
+    "src/lib/index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}

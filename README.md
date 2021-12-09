@@ -1,1 +1,2 @@
-# core
+# @babylon-app/core
+
