@@ -15,7 +15,7 @@ You need to setup your environment to generate BabylonJS bundle, you can
 - follow the official documentation https://doc.babylonjs.com/divingDeeper/developWithBjs/treeShaking. 
 - or use [our boilerplate](https://github.com/babylon-app/template) with everything ready for you to start
 
-### createApp
+### `createApp`
 __app.js__
 ```javascript
 import {createApp} from "@babylon-app/core";
@@ -31,7 +31,7 @@ createApp({
 Will setup anything, download the glb file...but you will get the usual exception : 'No default camera'.
 Let create the default camera in a component wrote in a dedicated js module file
 
-### createComponent
+### `createComponent`
 __activeCamera.js__
 ```javascript
 import {createComponent} from "@babylon-app/core";
@@ -46,16 +46,16 @@ createComponent({
     }
 });
 ```
-### mounted()
-mounted() is a reserved function name, it will be called when the app is ready to render (but before the rendering loop start).
+### `mounted()`
+`mounted()` is a reserved function name, it will be called when the app is ready to render (but before the rendering loop start).
 
-### this.$scene
+### `this.$scene`
 
-**this.$scene** represent the current Babylon Scene. With component you don't have to think about if the scene is ready, if the app is launched etc. it is
+`this.$scene` represent the current Babylon Scene. With component you don't have to think about if the scene is ready, if the app is launched etc. it is
 just available anytime and you can call it securely.
 
-### this.$canvas, this.$engine
-Same principle for the HTMLCanvasElement (**this.$canvas**) used by the BabylonJS Engine (**this.$engine**)
+### `this.$canvas`, `this.$engine`
+Same principle for the HTMLCanvasElement (`this.$canvas`) used by the BabylonJS Engine (`this.$engine`)
 
 ### import component.js
 We need to import this file in app.js to let the app known about this component
@@ -115,13 +115,13 @@ createComponent({
 });
 ```
 
-### $app.$getComponent
+### `$app.$getComponent`
 Open your browser console :
 > $app.$getComponent('environment').setIntensity(0.4)
 
-$app is the only global object created by @babylon-core so you can use it to plug your HTML events.
+`$app` is the only global object created by @babylon-core so you can use it to plug your HTML events.
 
-### props
+### `props`
 __light.js__
 ```javascript
 import {createComponent} from "@babylon-app/core";
@@ -143,7 +143,7 @@ createComponent({
 });
 ```
 
-props is a reserved keyword to specify the component properties. Props are available everywhere
+`props` is a reserved keyword to specify the component properties. Props are available everywhere
 in the component.
 
 Don't forget to update app.js
@@ -163,7 +163,7 @@ createApp({
 
 Maybe you want to interact with the environment while your are tweaking the light so you could do :
 
-### this.$app.$getComponent
+### `this.$app.$getComponent`
 __light.js__
 ```javascript
  import {createComponent} from "@babylon-app/core";
@@ -190,7 +190,7 @@ __light.js__
  ```
 Component can interact each other.
 
-### this.$assets
+### `this.$assets`
 Import GLTF to the scene with a component :
  
 __shaderBall.js__
@@ -208,7 +208,7 @@ createComponent({
  ```
 
 ## Query and Patch the scene graph
-### this.$queryAll
+### `this.$queryAll`
 Available in App and Components :
 
 ```javascript
@@ -220,7 +220,7 @@ In the console
 
 > $app.$queryAll({ type : 'Mesh'});
 
-### this.$patch
+### `this.$patch`
 ```javascript
 this.$patch({
     selector : {
