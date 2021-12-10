@@ -16,8 +16,8 @@ You need to setup your environment to generate BabylonJS bundle, you can
 - or use [our boilerplate](https://github.com/babylon-app/template) with everything ready for you to start
 
 ### `createApp`
-__app.js__
 ```javascript
+/** app.js **/
 import {createApp} from "@babylon-app/core";
 
 createApp({
