@@ -33,6 +33,18 @@ $hideWireframe()
 
 -- BUILDIN EVENTS --
 
+$app.$on('$pointer-down', () => {
+
+});
+
+$app.$on('$mesh-pick'; (mesh) => {
+
+))
+
+this.$on('$mesh-pick:mesh.000', (mesh) => {
+
+)
+
 $on('$picked', (mesh, pickInfo) => {
     
 });

@@ -1,13 +1,7 @@
 # A framework to write modular @BabylonJS applications
 
-## Install
-> npm install @babylon-app/core
+## TODO : Why
 
-Will also install @babylonjs/core and @babylonjs/loaders as dependencies
-
-## Why
-
-TODO :
 * Don't let your code grow to a mammoth size
 * When it becomes a medium sized project, you have the overhead of maintaining the project because your code starts bloating. How to apply a bandage to that bleeding code?
 * It is a nightmare to scroll that thousand line javascript file where a variable assignment is breaking five other places. The global variables play a magical role in confusing you.
@@ -241,6 +235,28 @@ this.$patch({
  ```
 Patch can be stored in a JSON file and imported :
 
-
+__scene.json__
+```json
+{
+    "selector" : {
+        "type" : "Mesh",
+        "name" : "mesh.*.000"
+    },
+    "patch" : {
+        "isVisible" : true
+    }
+}
+ ```
+__example.js__
+```javascript
+import { createComponent} from "@babylon-app/core";
+import patchScene from '../patches/scene.json';
+createComponent({
+    name : 'example',
+    mounted() {
+       this.$patch(patchScene);
+    }
+});
+ ```
 
 

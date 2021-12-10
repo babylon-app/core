@@ -1,9 +1,8 @@
 import { createApp } from "../../lib/";
 import { ArcRotateCamera, Vector3 } from "@babylonjs/core";
 import './camera';
-import "./lightning";
 import "./environment";
-import "./shaderBall";
+
 
 createApp({
     name : 'cornellBox',
