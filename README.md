@@ -1,15 +1,14 @@
-# A framework to write modular @BabylonJS applications
+# Modularizing the @BabylonJS applications
 
 ## TODO : Why
 
 * Don't let your code grow to a mammoth size
-* When it becomes a medium sized project, you have the overhead of maintaining the project because your code starts bloating. How to apply a bandage to that bleeding code?
-* It is a nightmare to scroll that thousand line javascript file where a variable assignment is breaking five other places. The global variables play a magical role in confusing you.
-* The maintainability of the project becomes painful. It is very tough to debug the code at some point of time.
+    * When it becomes a medium sized project, you have the overhead of maintaining the project because your code starts bloating. How to apply a bandage to that bleeding code?
+    * It is a nightmare to scroll that thousand line javascript file where a variable assignment is breaking five other places. The global variables play a magical role in confusing you.
+    * The maintainability of the project becomes painful. It is very tough to debug the code at some point of time.
 * it is easier to achieve scalability with modular programming
-* Good authors divide their books into chapters and sections; good programmers divide their programs into modules.
-* A well-designed module aims to lessen the dependencies on parts of the codebase as much as possible, so that it can grow and improve independently
-* Loading 3D Scene with callbacks, async implicated js call, promise
+    * Good authors divide their books into chapters and sections; good programmers divide their programs into modules.
+    * A well-designed module aims to lessen the dependencies on parts of the codebase as much as possible, so that it can grow and improve independently
 
 ## Getting started
 You need to setup your environment to generate BabylonJS bundle, you can  
