@@ -27,13 +27,12 @@ createApp({
     canvas : document.getElementById('render-canvas')
 });
 ```
-
 Will setup anything, download the glb file...but you will get the usual exception : 'No default camera'.
 Let create the default camera in a component wrote in a dedicated js module file
 
 ### `createComponent`
-__activeCamera.js__
 ```javascript
+/** activeCamera.js **/
 import {createComponent} from "@babylon-app/core";
 import {ArcRotateCamera, Vector3} from "@babylonjs/core";
 
@@ -60,8 +59,8 @@ Same principle for the HTMLCanvasElement (`this.$canvas`) used by the BabylonJS 
 ### import component.js
 We need to import this file in app.js to let the app known about this component
 
-__app.js__
 ```javascript
+/** app.js **/
 import {createApp} from "@babylon-app/core";
 import './environment.js';
 
@@ -72,11 +71,9 @@ createApp({
     canvas : document.getElementById('render-canvas')
 });
 ```
-
 The cornell box rendered but its all black because we need to setup an environment, we'll make a component for it
-
-__environment.js__
 ```javascript
+/** environment.js **/
 import {createComponent} from "@babylon-app/core";
 import { CubeTexture } from "@babylonjs/core";
 
@@ -93,8 +90,9 @@ createComponent({
 We want to tweak the environment intensity on material so we will declare a methods in the component 
 
 ### methods 
-__environment.js__
+
 ```javascript
+/** environment.js **/
 import {createComponent} from "@babylon-app/core";
 import { CubeTexture } from "@babylonjs/core";
 
@@ -122,8 +120,8 @@ Open your browser console :
 `$app` is the only global object created by @babylon-core so you can use it to plug your HTML events.
 
 ### `props`
-__light.js__
 ```javascript
+/** light.js **/
 import {createComponent} from "@babylon-app/core";
 import { CubeTexture } from "@babylonjs/core";
 
@@ -146,9 +144,9 @@ createComponent({
 `props` is a reserved keyword to specify the component properties. Props are available everywhere
 in the component.
 
-Don't forget to update app.js
-__app.js__
+Don't forget to update __app.js__
 ```javascript
+/** app.js **/
 import {createApp} from "@babylon-app/core";
 
 import './activeCamera.js'
@@ -164,12 +162,12 @@ createApp({
 Maybe you want to interact with the environment while your are tweaking the light so you could do :
 
 ### `this.$app.$getComponent`
-__light.js__
 ```javascript
- import {createComponent} from "@babylon-app/core";
- import { CubeTexture } from "@babylonjs/core";
+/** light.js **/ 
+import {createComponent} from "@babylon-app/core";
+import { CubeTexture } from "@babylonjs/core";
  
- createComponent({
+createComponent({
      name : 'light',
      props : {
          light : new DirectionalLight('dirLight', new Vector3(0,-1,0), this.$scene)
@@ -186,15 +184,15 @@ __light.js__
             this.$app.$getComponent('environment').setIntensity(1 - intensity);
          },
      }
- });
+});
  ```
 Component can interact each other.
 
 ### `this.$assets`
 Import GLTF to the scene with a component :
  
-__shaderBall.js__
 ```javascript
+/** shaderBall.js **/
 import { createComponent} from "@babylon-app/core";
 
 createComponent({
@@ -246,8 +244,9 @@ __scene.json__
     }
 }
  ```
-__example.js__
+
 ```javascript
+/** example.js **/
 import { createComponent} from "@babylon-app/core";
 import patchScene from '../patches/scene.json';
 createComponent({
